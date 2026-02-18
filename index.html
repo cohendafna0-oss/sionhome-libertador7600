@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -6,115 +6,47 @@
 <title>Av. Del Libertador 7600 | Sion Home</title>
 
 <style>
-body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#f4f4f4;
-}
+body{margin:0;font-family:Arial;background:#f4f4f4;}
 
-header{
-background:white;
-padding:15px;
-text-align:center;
-}
-
-header img{
-height:55px;
-}
+header{background:white;padding:15px;text-align:center;}
+header img{height:55px;}
 
 .hero{
 height:60vh;
 background:url('IMG_0083.jpeg') center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-font-size:36px;
-font-weight:bold;
+display:flex;align-items:center;justify-content:center;
+color:white;font-size:36px;font-weight:bold;
 }
 
-.container{
-max-width:1100px;
-margin:auto;
-padding:30px;
-background:white;
-}
+.container{max-width:1000px;margin:auto;padding:25px;background:white;}
+.price{font-size:28px;color:#0f766e;margin:20px 0;}
 
-.price{
-font-size:28px;
-color:#0f766e;
-margin:20px 0;
-}
+.carousel{position:relative;overflow:hidden;}
+.slides{display:flex;transition:.4s;}
+.slides img{width:100%;border-radius:10px;}
 
-/* CARRUSEL */
-.carousel-wrapper{
-position:relative;
+.nav{
+position:absolute;top:45%;
+background:white;border:none;
+padding:10px 15px;border-radius:50%;
+cursor:pointer;font-size:22px;
 }
+.prev{left:10px;} .next{right:10px;}
 
-.carousel{
-display:flex;
-overflow-x:auto;
-scroll-behavior:smooth;
-gap:15px;
-}
+.map{width:100%;height:300px;border:0;border-radius:10px;}
 
-.carousel img{
-height:260px;
-border-radius:10px;
-flex-shrink:0;
-}
-
-.arrow{
-position:absolute;
-top:40%;
-background:white;
-border:none;
-font-size:22px;
-cursor:pointer;
-padding:10px 15px;
-border-radius:50%;
-box-shadow:0 2px 8px rgba(0,0,0,0.2);
-}
-
-.left{ left:-10px; }
-.right{ right:-10px; }
-
-.dots{
-text-align:center;
-margin-top:10px;
-}
-
-.dot{
-display:inline-block;
-width:8px;
-height:8px;
-background:#ccc;
-border-radius:50%;
-margin:4px;
-}
-
-.section{
-margin-top:40px;
-}
+.section{margin-top:40px;}
 
 footer{
-background:#111;
-color:white;
-text-align:center;
-padding:25px;
-margin-top:40px;
+background:#111;color:white;text-align:center;
+padding:25px;margin-top:40px;
 }
 
 .whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px 20px;
-border-radius:40px;
-text-decoration:none;
-font-weight:bold;
+position:fixed;bottom:20px;right:20px;
+background:#25D366;color:white;
+padding:15px 20px;border-radius:40px;
+text-decoration:none;font-weight:bold;
 }
 </style>
 </head>
@@ -122,7 +54,7 @@ font-weight:bold;
 <body>
 
 <header>
-<img src="logo.png" alt="Sion Home">
+<img src="logo.png">
 </header>
 
 <div class="hero">
@@ -135,10 +67,11 @@ Av. Del Libertador 7600
 
 <h2>Galería</h2>
 
-<div class="carousel-wrapper">
-<button class="arrow left" onclick="scrollCarousel(-300)">‹</button>
+<div class="carousel">
+<button class="nav prev" onclick="moveSlide(-1)">‹</button>
 
-<div class="carousel" id="carousel">
+<div class="slides" id="slides">
+
 <img src="IMG_0083.jpeg">
 <img src="IMG_0084.jpeg">
 <img src="IMG_0085.jpeg">
@@ -148,15 +81,28 @@ Av. Del Libertador 7600
 <img src="IMG_0089.jpeg">
 <img src="IMG_0090.jpeg">
 <img src="IMG_0091.jpeg">
+<img src="IMG_0092.jpeg">
+<img src="IMG_0093.jpeg">
+<img src="IMG_0094.jpeg">
+<img src="IMG_0095.jpeg">
+<img src="IMG_0096.jpeg">
+<img src="IMG_0097.jpeg">
+<img src="IMG_0098.jpeg">
+<img src="IMG_0099.jpeg">
+<img src="IMG_0100.jpeg">
+<img src="IMG_0101.jpeg">
+<img src="IMG_0102.jpeg">
+
 </div>
 
-<button class="arrow right" onclick="scrollCarousel(300)">›</button>
+<button class="nav next" onclick="moveSlide(1)">›</button>
 </div>
 
-<div class="dots">
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="dot"></span>
+<div class="section">
+<h2>Ubicación</h2>
+<iframe class="map"
+src="https://maps.google.com/maps?q=Av%20del%20Libertador%207600%20Buenos%20Aires&t=&z=15&output=embed">
+</iframe>
 </div>
 
 <div class="section">
@@ -171,9 +117,7 @@ ubicación sobre Av. del Libertador.
 
 <div class="section">
 <h2>Ambientes</h2>
-<ul>
-<li>Balcón</li>
-</ul>
+<ul><li>Balcón</li></ul>
 </div>
 
 <div class="section">
@@ -188,7 +132,6 @@ ubicación sobre Av. del Libertador.
 
 <footer>
 <strong>Sion Home</strong><br>
-Inmobiliaria<br>
 📞 +54 9 11 6975-2943<br>
 ✉️ siontalgam2@gmail.com
 </footer>
@@ -199,16 +142,20 @@ WhatsApp
 </a>
 
 <script>
-function scrollCarousel(amount){
-document.getElementById('carousel').scrollBy({
-left: amount,
-behavior: 'smooth'
-});
+let index=0;
+function moveSlide(step){
+const slides=document.getElementById("slides");
+const total=slides.children.length;
+index+=step;
+if(index<0) index=total-1;
+if(index>=total) index=0;
+slides.style.transform="translateX(-"+index*100+"%)";
 }
 </script>
 
 </body>
 </html>
+
 
 
 
