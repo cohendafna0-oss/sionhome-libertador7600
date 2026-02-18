@@ -6,47 +6,121 @@
 <title>Av. Del Libertador 7600 | Sion Home</title>
 
 <style>
-body{margin:0;font-family:Arial;background:#f4f4f4;}
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#f4f4f4;
+}
 
-header{background:white;padding:15px;text-align:center;}
-header img{height:55px;}
+header{
+background:white;
+padding:15px;
+text-align:center;
+}
+
+header img{
+height:55px;
+}
 
 .hero{
 height:60vh;
 background:url('IMG_0083.jpeg') center/cover no-repeat;
-display:flex;align-items:center;justify-content:center;
-color:white;font-size:36px;font-weight:bold;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:36px;
+font-weight:bold;
 }
 
-.container{max-width:1000px;margin:auto;padding:25px;background:white;}
-.price{font-size:28px;color:#0f766e;margin:20px 0;}
+.container{
+max-width:1000px;
+margin:auto;
+padding:25px;
+background:white;
+}
 
-.carousel{position:relative;overflow:hidden;}
-.slides{display:flex;transition:.4s;}
-.slides img{width:100%;border-radius:10px;}
+.price{
+font-size:28px;
+color:#0f766e;
+margin:20px 0;
+}
+
+/* TARJETAS INFO */
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:12px;
+margin-top:15px;
+}
+
+.card{
+background:#f7f7f7;
+padding:12px;
+border-radius:10px;
+text-align:center;
+font-weight:500;
+}
+
+/* CARRUSEL */
+.carousel{
+position:relative;
+overflow:hidden;
+}
+
+.slides{
+display:flex;
+transition:.4s;
+}
+
+.slides img{
+width:100%;
+border-radius:10px;
+}
 
 .nav{
-position:absolute;top:45%;
-background:white;border:none;
-padding:10px 15px;border-radius:50%;
-cursor:pointer;font-size:22px;
+position:absolute;
+top:45%;
+background:white;
+border:none;
+padding:10px 15px;
+border-radius:50%;
+cursor:pointer;
+font-size:22px;
 }
-.prev{left:10px;} .next{right:10px;}
 
-.map{width:100%;height:300px;border:0;border-radius:10px;}
+.prev{ left:10px; }
+.next{ right:10px; }
 
-.section{margin-top:40px;}
+.map{
+width:100%;
+height:300px;
+border:0;
+border-radius:10px;
+}
+
+.section{
+margin-top:40px;
+}
 
 footer{
-background:#111;color:white;text-align:center;
-padding:25px;margin-top:40px;
+background:#111;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
 }
 
 .whatsapp{
-position:fixed;bottom:20px;right:20px;
-background:#25D366;color:white;
-padding:15px 20px;border-radius:40px;
-text-decoration:none;font-weight:bold;
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
 }
 </style>
 </head>
@@ -65,13 +139,33 @@ Av. Del Libertador 7600
 
 <div class="price">USD 460.000</div>
 
+<div class="section">
+<h2>Información general</h2>
+<div class="features">
+<div class="card">🏠 145 m² construido</div>
+<div class="card">📐 134 m² cubierta</div>
+<div class="card">🧩 5 ambientes</div>
+<div class="card">🛏 3 dormitorios</div>
+<div class="card">🛁 3 baños</div>
+<div class="card">🚗 1 cochera</div>
+<div class="card">⏱ 45 años</div>
+</div>
+</div>
+
+<div class="section">
+<h2>Superficies y medidas</h2>
+<div class="features">
+<div class="card">Superficie cubierta: 134 m²</div>
+<div class="card">Superficie semicubierta: 11 m²</div>
+</div>
+</div>
+
 <h2>Galería</h2>
 
 <div class="carousel">
 <button class="nav prev" onclick="moveSlide(-1)">‹</button>
 
 <div class="slides" id="slides">
-
 <img src="IMG_0083.jpeg">
 <img src="IMG_0084.jpeg">
 <img src="IMG_0085.jpeg">
@@ -92,7 +186,6 @@ Av. Del Libertador 7600
 <img src="IMG_0100.jpeg">
 <img src="IMG_0101.jpeg">
 <img src="IMG_0102.jpeg">
-
 </div>
 
 <button class="nav next" onclick="moveSlide(1)">›</button>
@@ -117,7 +210,9 @@ ubicación sobre Av. del Libertador.
 
 <div class="section">
 <h2>Ambientes</h2>
-<ul><li>Balcón</li></ul>
+<ul>
+<li>Balcón</li>
+</ul>
 </div>
 
 <div class="section">
@@ -155,6 +250,7 @@ slides.style.transform="translateX(-"+index*100+"%)";
 
 </body>
 </html>
+
 
 
 
